@@ -1,0 +1,22 @@
+#ifndef OS2_INCLUDED
+   #include <os2.h>
+#endif
+RCINCLUDE "RESOURCE.H"
+
+DLGTEMPLATE ID_PMKEY_DLG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "PMKey", ID_PMKEY_DLG, 46, 5, 218, 76, FS_SCREENALIGN | 
+            WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        ENTRYFIELD      "", ID_CHALLENGE_EDIT, 56, 60, 153, 7, ES_MARGIN
+        ENTRYFIELD      "", ID_PASSWORD_EDIT, 56, 46, 153, 7, ES_MARGIN | 
+                        ES_UNREADABLE
+        ENTRYFIELD      "", ID_RESPONSE_EDIT, 56, 32, 153, 7, ES_MARGIN | 
+                        ES_READONLY
+        LTEXT           "Challenge:", 104, 5, 59, 44, 8
+        LTEXT           "Password:", 105, 5, 45, 45, 8
+        LTEXT           "Response:", 106, 5, 31, 45, 8
+        DEFPUSHBUTTON   "~Compute", ID_COMPUTE_BTN, 10, 6, 45, 14
+        PUSHBUTTON      "E~xit", ID_EXIT_BTN, 64, 6, 45, 14
+    END
+END
